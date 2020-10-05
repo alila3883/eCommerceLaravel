@@ -22,7 +22,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function() 
     ## End Language Route ##
 
     ## Main Categories Route ##
-    Route::resource('/main_categories', 'MainCategoryController');
+    Route::resource('/main_categories', 'MainCategoryController')->except('show');
     ## End Main Categories Route ##
 
     ## Main Vendors Route ##

@@ -83,11 +83,6 @@ class MainCategoryController extends Controller
         }
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $category = MainCategory::with('categories')
@@ -145,6 +140,31 @@ class MainCategoryController extends Controller
 
     public function destroy($id)
     {
-        //
+
+        try {
+            $mainCategory = MainCategory::find($id);
+
+            if (!$mainCategory) {
+                return redirect()->route('main_categories.index')->with(['error' => 'هذه اللغة غير موجودة']);
+            }
+
+            foreach ($mainCategory->categories as $category) {
+                $category->delete();
+            }
+
+            if ($mainCategory->image) {
+                if (File::exists('assets/images/' . $mainCategory->image)) {
+
+                    unlink('assets/images/' . $mainCategory->image);
+                }
+            }
+
+            $mainCategory->delete();
+
+            return redirect()->route('main_categories.index')->with(['success' => 'تم حذف القسم والصورة بنجاح']);
+
+        } catch (\Exception $ex) {
+            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى المحاولة لاحقا']);
+        }
     }
 }

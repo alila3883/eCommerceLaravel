@@ -26,10 +26,10 @@ class MainCategory extends Model
         return $this->status == '1' ? 'مفعل' : 'غير مفعل';
     }
 
-    public function getImageAttribute($val)
-    {
-        return $val !== null ? asset('assets/images/' . $val) : "";
-    }
+//    public function getImageAttribute($val)
+//    {
+//        return $val !== null ? asset('assets/images/' . $val) : "";
+//    }
 
     public function categories()
     {
