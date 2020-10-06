@@ -11,7 +11,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.vendors')}}">المتاجر </a>
+                                <li class="breadcrumb-item"><a href="{{route('vendors.index')}}">المتاجر </a>
                                 </li>
                                 <li class="breadcrumb-item active">إضافة متجر
                                 </li>
@@ -43,14 +43,14 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.vendors.store')}}"
+                                        <form class="form" action="{{route('vendors.store')}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             <input type="hidden"  value="" id="latitude" name="latitude">
                                             <input type="hidden" value="" id="longitude"  name="longitude">
                                             @csrf
                                             <div class="form-group">
-                                                <label> لوجو التجار </label>
+                                                <label> الوقو </label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="logo">
                                                     <span class="file-custom"></span>
@@ -63,7 +63,6 @@
                                             <div class="form-body">
 
                                                 <h4 class="form-section"><i class="ft-home"></i> بيانات المتجر </h4>
-
 
                                                 <div class="row">
                                                     <div class="col-md-6">
@@ -78,16 +77,15 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6 col-lg-6 col-xl-6">
                                                         <div class="form-group">
                                                             <label for="projectinput2"> أختر القسم </label>
-                                                            <select name="category_id" class="select2 form-control">
+                                                            <select name="category_id" class="select2 form-control" id="projectinput2">
                                                                 <optgroup label="من فضلك أختر القسم ">
-                                                                    @if($categories && $categories -> count() > 0)
+                                                                    @if($categories && $categories->count() > 0)
                                                                         @foreach($categories as $category)
                                                                             <option
-                                                                                value="{{$category -> id }}">{{$category -> name}}</option>
+                                                                                value="{{$category->id }}">{{$category->name}}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </optgroup>
@@ -97,11 +95,36 @@
                                                             @enderror
                                                         </div>
                                                     </div>
+
                                                 </div>
 
-
                                                 <div class="row">
-                                                    <div class="col-md-6 ">
+                                                    <div class="col-md-4 ">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> البريد الالكتروني </label>
+                                                            <input type="text" id="email"
+                                                                   class="form-control"
+                                                                   placeholder="  " name="email">
+
+                                                            @error("email")
+                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">كلمة المرور  </label>
+                                                            <input type="password" id="password"
+                                                                   class="form-control"
+                                                                   placeholder="  " name="password">
+
+                                                            @error("password")
+                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @enderror
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-4 ">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> رقم الهاتف </label>
                                                             <input type="text" id="mobile"
@@ -113,41 +136,32 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6 ">
-                                                        <div class="form-group">
-                                                            <label for="projectinput1"> ألبريد الالكتروني </label>
-                                                            <input type="text" id="email"
-                                                                   class="form-control"
-                                                                   placeholder="  " name="email">
+                                                </div>
 
-                                                            @error("email")
-                                                            <span class="text-danger"> {{$message}}</span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
-
+                                                <div class="row">
 
                                                 </div>
 
 
                                                 <div class="row">
-                                                    <div class="class col-12">
-                                                            <div class="form-group">
-                                                                <label for="projectinput1">كلمة المرور  </label>
-                                                                <input type="password" id="password"
-                                                                       class="form-control"
-                                                                       placeholder="  " name="password">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group mt-1">
+                                                            <input type="checkbox" value="1"
+                                                                   name="status"
+                                                                   id="switcheryColor4"
+                                                                   class="switchery" data-color="success"
+                                                                   checked/>
+                                                            <label for="switcheryColor4"
+                                                                   class="card-title ml-1">الحالة </label>
 
-                                                                @error("password")
-                                                                <span class="text-danger"> {{$message}}</span>
-                                                                @enderror
-                                                            </div>
-
+                                                            @error("status")
+                                                            <span class="text-danger"> </span>
+                                                            @enderror
+                                                        </div>
                                                     </div>
                                                 </div>
 
-
-                                                <di class="row">
+                                                <div class="row">
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> العنوان  </label>
@@ -160,30 +174,12 @@
                                                             @enderror
                                                         </div>
                                                     </div>
-
-                                                </di>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group mt-1">
-                                                            <input type="checkbox" value="1"
-                                                                   name="active"
-                                                                   id="switcheryColor4"
-                                                                   class="switchery" data-color="success"
-                                                                   checked/>
-                                                            <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة </label>
-
-                                                            @error("active")
-                                                            <span class="text-danger"> </span>
-                                                            @enderror
-                                                        </div>
-                                                    </div>
                                                 </div>
 
                                             </div>
 
 
-                                            <div id="map" style="height: 500px;width: 1000px;"></div>
+                                            <div id="map" style="height: 500px;width: 100%;"></div>
 
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
@@ -212,8 +208,6 @@
 @section('script')
 
     <script>
-
-
 
         $("#pac-input").focusin(function() {
             $(this).val('');
@@ -418,6 +412,6 @@
         }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZAuxH9xTzD2DLY2nKSPKrgRi2_y0ejs&libraries=places&callback=initAutocomplete&language=ar&region=EG
-         async defer"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZAuxH9xTzD2DLY2nKSPKrgRi2_y0ejs&libraries=places&callback=initAutocomplete&language=ar&region=SA
+async defer"></script>
     @stop

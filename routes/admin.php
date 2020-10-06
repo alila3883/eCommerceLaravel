@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//define('PAGINATION_COUNT', 10);
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function() {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
 

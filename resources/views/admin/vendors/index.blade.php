@@ -48,10 +48,10 @@
                                             <thead class="">
                                             <tr>
                                                 <th>الاسم</th>
-                                                <th> اللوجو</th>
+                                                <th> الشعار</th>
                                                 <th>الهاتف</th>
                                                 <th>القسم الرئيسي</th>
-                                                <th> ألحالة </th>
+                                                <th> الحالة </th>
                                                 <th>الإجراءات</th>
                                             </tr>
                                             </thead>
@@ -60,18 +60,18 @@
                                             @isset($vendors)
                                                 @foreach($vendors as $vendor)
                                                     <tr>
-                                                        <td>{{$vendor -> name}}</td>
+                                                        <td>{{$vendor->name}}</td>
                                                         <td><img style="width: 150px; height: 100px;"
-                                                                 src="{{$vendor -> 	logo}}"></td>
+                                                                 src="{{$vendor->logo}}"></td>
 
-                                                        <td>{{$vendor -> mobile}}</td>
-                                                        <td> {{$vendor -> 	category -> name}}</td>
+                                                        <td>{{$vendor-> mobile}}</td>
+                                                        <td> {{$vendor->category->name}}</td>
 
-                                                        <td> {{$vendor -> getActive()}}</td>
+                                                        <td> {{$vendor->getStatus()}}</td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.vendors.edit',$vendor -> id)}}"
+                                                                <a href="{{route('vendors.edit', $vendor->id)}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
 
 

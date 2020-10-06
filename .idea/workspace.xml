@@ -3,8 +3,45 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fda96d92-f597-448d-9663-2398e31240bc" name="Default Changelist" comment="" />
+    <list default="true" id="fda96d92-f597-448d-9663-2398e31240bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/Admin/VendorRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Vendor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Notifications/VendorCreated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_10_06_060519_create_vendors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/aghz-alktrony5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/ahthy3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/mlabs1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/aaly-alkhtany.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MainCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MainCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/vendors/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/vendors/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/vendors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/vendors/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +50,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -138,12 +178,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iJnKbOi1pVbsMkc19JmG03FDTp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -194,22 +240,39 @@
       <workItem from="1601888478453" duration="9545000" />
       <workItem from="1601898065338" duration="1889000" />
       <workItem from="1601915864563" duration="2005000" />
-      <workItem from="1601921847721" duration="3465000" />
+      <workItem from="1601921847721" duration="9597000" />
+      <workItem from="1601964020868" duration="13744000" />
+      <workItem from="1602003597295" duration="9294000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="3130" y="346" width="531" height="408" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601847413067">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
     <state x="3130" y="346" width="531" height="408" key="#com.intellij.fileTypes.FileTypeChooser/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601847413067" />
-    <state x="2916" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601896583703">
+    <state x="2916" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602008672853">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="2916" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601896583703" />
+    <state x="2916" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602008672853" />
     <state x="3040" y="322" width="661" height="442" key="EditFileWatcherDialog" timestamp="1601641848335">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
@@ -222,10 +285,10 @@
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
     <state x="2872" y="149" width="857" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601720229025" />
-    <state x="673" y="22" width="1640" height="1040" key="dock-window-1" timestamp="1601824870230">
+    <state x="1176" y="22" width="1121" height="1040" key="dock-window-1" timestamp="1601982955754">
       <screen x="72" y="22" width="2488" height="1058" />
     </state>
-    <state x="673" y="22" width="1640" height="1040" key="dock-window-1/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601824870230" />
+    <state x="1176" y="22" width="1121" height="1040" key="dock-window-1/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601982955754" />
     <state x="130" y="63" width="1088" height="1040" key="dock-window-2" timestamp="1601824870230">
       <screen x="72" y="22" width="2488" height="1058" />
     </state>
@@ -238,10 +301,10 @@
       <screen x="72" y="22" width="2488" height="1058" />
     </state>
     <state x="1273" y="98" width="1158" height="1040" key="dock-window-4/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601843661737" />
-    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1601923031124">
+    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1602011061578">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
-    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1601923031124" />
+    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602011061578" />
     <state x="3122" y="380" width="540" height="327" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1601848313190">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
