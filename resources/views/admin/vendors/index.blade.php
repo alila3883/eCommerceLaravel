@@ -84,7 +84,7 @@
                                                                 </form>
 
 
-                                                                <a href=""
+                                                                <a href="{{ route('vendors.status', $vendor->id) }}"
                                                                    class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
                                                                 @if($vendor->status == 0)
                                                                     تفعيل

@@ -163,18 +163,16 @@ class MainCategoryController extends Controller
 
             $mainCategory->categories()->delete();
 
-//            if ($mainCategory->image) {
-//                if (File::exists('assets/images/' . $mainCategory->image)) {
-//
-//                    unlink('assets/images/' . $mainCategory->image);
-//                }
-//            }
+            // Find Image
+            $image = Str::after($mainCategory->image, 'assets/');
+            $image = base_path('public/assets/'.$image);
 
-            if ($mainCategory->image) {
+            if (isset($image)){
 
-                $image = Str::after($mainCategory->image, 'assets/');
-                $image = base_path('public/assets/'.$image);
-                unlink($image);
+                if (File::exists($image)) {
+
+                    unlink($image);
+                }
             }
 
             $mainCategory->delete();

@@ -23,28 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda96d92-f597-448d-9663-2398e31240bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Observers/MainCategoryObserver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/ahthy-id-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/akssoarat-id-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/ksm-balaarby-id-9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/categories/mlabs-id-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/aabdalhady-alshhry-id-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/aaly-alkhtany-id-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/ahmd-gmaaan-id-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/mohamed-mansur-id-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/saad-alkhtany-id-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/vendors/yasr-aaly-id-7.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MainCategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VendorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/MainCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MainCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Vendor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/categories/aghz-alktrony-id-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/categories/aghz-alktrony-id-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/images/vendors/ali-alhabash-id-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/vendors/ali-alhabash-id-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/main_categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/main_categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/vendors/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/vendors/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/vendors/aabdalhady-alshhry-id-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/vendors/ali-alhabash-id-2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/vendors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/vendors/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
     </list>
@@ -251,7 +235,7 @@
       <workItem from="1602003597295" duration="9381000" />
       <workItem from="1602049220258" duration="19620000" />
       <workItem from="1602074792569" duration="5893000" />
-      <workItem from="1602094730798" duration="4384000" />
+      <workItem from="1602094730798" duration="9084000" />
     </task>
     <servers />
   </component>
@@ -311,11 +295,11 @@
       <screen x="72" y="22" width="2488" height="1058" />
     </state>
     <state x="579" y="22" width="1536" height="1040" key="dock-window-4/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602073899708" />
-    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1602099915676">
+    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1602103463098">
       <screen x="2560" y="0" width="2560" height="1080" />
     </state>
     <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/2560.0.2560.1080/72.22.2488.1058@2560.0.2560.1080" timestamp="1602079863368" />
-    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/2560.0.2560.1080/72.27.2488.1053@2560.0.2560.1080" timestamp="1602099915676" />
+    <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/2560.0.2560.1080/72.27.2488.1053@2560.0.2560.1080" timestamp="1602103463098" />
     <state x="3018" y="239" width="672" height="678" key="search.everywhere.popup/72.22.2488.1058/2560.0.2560.1080@2560.0.2560.1080" timestamp="1602073411734" />
     <state x="3122" y="380" width="540" height="327" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1601848313190">
       <screen x="2560" y="0" width="2560" height="1080" />

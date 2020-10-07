@@ -162,10 +162,18 @@ class VendorController extends Controller
 //                }
 //            }
 
-
             $logo = Str::after($vendor->logo, 'assets/');
             $logo = base_path('public/assets/'.$logo);
-            unlink($logo);
+
+            if (isset($logo)){
+
+                if (File::exists($logo)) {
+
+                    unlink($logo);
+                }
+            }
+
+
 
 
             $vendor->delete();
@@ -175,6 +183,27 @@ class VendorController extends Controller
         } catch (\Exception $exception) {
 
             return redirect()->back()->with(['error' => 'حدث خطأ يرجى المحاولة لاحقا']);
+        }
+    }
+
+    public function change_status($id)
+    {
+        try {
+
+            $vendor = Vendor::find($id);
+
+            if (!$vendor){
+                return redirect()->route('vendors.index')->with(['error' => 'هذا المتجر غير موجود!']);
+            }
+
+            $status = $vendor->status == 0 ? 1 : 0;
+
+            $vendor->update(['status' => $status]);
+
+            return redirect()->route('vendors.index')->with(['success' => 'تم تغير حالة القسم بنجاح']);
+
+        } catch (\Exception $exception) {
+            return redirect()->back()->with(['error' => 'حدث خطأ يرجى الحذف لاحقا']);
         }
     }
 }

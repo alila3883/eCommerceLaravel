@@ -57,14 +57,14 @@ return [
 
         'categories' => [
             'driver' => 'local',
-            'root' => base_path('public/assets/images'),
+            'root' => public_path('assets/images'),
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
 
         'vendors' => [
             'driver' => 'local',
-            'root' => base_path('public/assets/images'),
+            'root' => public_path('assets/images'),
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],
