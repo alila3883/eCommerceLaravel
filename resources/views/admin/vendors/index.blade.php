@@ -75,8 +75,13 @@
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
 
 
-                                                                <a href=""
-                                                                   class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
+                                                                <a href="javascript:void(0);" onclick="if (confirm('حذف المتجر ?'))
+                                                                    { document.getElementById('vendor-delete-{{ $vendor->id }}').submit(); } else { return false; }"
+                                                                   title="Delete" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
+                                                                <form action="{{ route('vendors.destroy', $vendor->id) }}" method="post" id="vendor-delete-{{ $vendor->id }}">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                </form>
 
 
                                                                 <a href=""

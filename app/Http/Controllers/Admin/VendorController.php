@@ -151,6 +151,27 @@ class VendorController extends Controller
 
     public function destroy($id)
     {
-        //
+        try {
+
+            $vendor = Vendor::find($id);
+
+            if (!$vendor) {
+                return redirect()->route('main_categories.index')->with(['error' => 'هذا المتجر غير موجود']);
+            }
+
+            if ($vendor->logo) {
+                if (File::exists('assets/images/' . $vendor->logo)) {
+
+                    unlink('assets/images/' . $vendor->logo);
+                }
+            }
+
+            $vendor->delete();
+
+            return redirect()->route('vendors.index')->with(['success' => 'تم حذف المتجر بنجاح']);
+
+        } catch (\Exception $exception) {
+            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الحذف يرجى المحاولة لاحقا']);
+        }
     }
 }

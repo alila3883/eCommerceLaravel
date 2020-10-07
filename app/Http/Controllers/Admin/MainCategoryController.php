@@ -152,7 +152,7 @@ class MainCategoryController extends Controller
             $vendors = $mainCategory->vendors();
 
             if (isset($vendors) && $vendors->count() > 0) {
-                return redirect()->route('main_categories.index')->with(['error' => 'لا يمكن حذف هذا القسم بسبب وجود تجار تابعين له ']);
+                return redirect()->route('main_categories.index')->with(['error' => 'لا يمكن حذف هذا القسم بسبب وجود متاجر تابعه له ']);
             }
 
             foreach ($mainCategory->categories as $category) {
@@ -168,10 +168,10 @@ class MainCategoryController extends Controller
 
             $mainCategory->delete();
 
-            return redirect()->route('main_categories.index')->with(['success' => 'تم حذف القسم والصورة بنجاح']);
+            return redirect()->route('main_categories.index')->with(['success' => 'تم حذف القسم بنجاح']);
 
         } catch (\Exception $ex) {
-            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى المحاولة لاحقا']);
+            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى الحذف لاحقا']);
         }
     }
 }
