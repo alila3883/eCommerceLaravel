@@ -10,6 +10,7 @@ use App\Notifications\VendorCreated;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Str;
 
 class VendorController extends Controller
 {
@@ -66,11 +67,6 @@ class VendorController extends Controller
         } catch (\Exception $exception) {
             return redirect()->route('vendors.index')->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى المحاولة لاحقا']);
         }
-    }
-
-    public function show($id)
-    {
-        //
     }
 
     public function edit($id)
@@ -159,19 +155,26 @@ class VendorController extends Controller
                 return redirect()->route('main_categories.index')->with(['error' => 'هذا المتجر غير موجود']);
             }
 
-            if ($vendor->logo) {
-                if (File::exists('assets/images/' . $vendor->logo)) {
+//            if ($vendor->logo) {
+//                if (File::exists('assets/images/' . $vendor->logo)) {
+//
+//                    unlink('assets/images/' . $vendor->logo);
+//                }
+//            }
 
-                    unlink('assets/images/' . $vendor->logo);
-                }
-            }
+
+            $logo = Str::after($vendor->logo, 'assets/');
+            $logo = base_path('public/assets/'.$logo);
+            unlink($logo);
+
 
             $vendor->delete();
 
             return redirect()->route('vendors.index')->with(['success' => 'تم حذف المتجر بنجاح']);
 
         } catch (\Exception $exception) {
-            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الحذف يرجى المحاولة لاحقا']);
+
+            return redirect()->back()->with(['error' => 'حدث خطأ يرجى المحاولة لاحقا']);
         }
     }
 }

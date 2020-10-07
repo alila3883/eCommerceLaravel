@@ -56,7 +56,7 @@
                                             <div class="form-group">
                                                 <div class="text-center">
                                                     <img
-                                                        src="{{ asset('assets/images/'. $vendor->logo) }}"
+                                                        src="{{ $vendor->logo }}"
                                                         class="rounded-circle  height-100" alt="صورة القسم  ">
                                                 </div>
                                             </div>

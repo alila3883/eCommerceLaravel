@@ -21,11 +21,12 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function() 
     ## End Language Route ##
 
     ## Main Categories Route ##
+    Route::get('/change_status/{id}', 'MainCategoryController@change_status')->name('main_categories.status');
     Route::resource('/main_categories', 'MainCategoryController')->except('show');
     ## End Main Categories Route ##
 
     ## Main Vendors Route ##
-    Route::resource('/vendors', 'VendorController');
+    Route::resource('/vendors', 'VendorController')->except('show');
     ## End Main Categories Route ##
 
 });

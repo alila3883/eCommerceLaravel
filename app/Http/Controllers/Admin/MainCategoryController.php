@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\MainCategoryRequest;
 use App\Models\MainCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class MainCategoryController extends Controller
 {
@@ -132,6 +133,7 @@ class MainCategoryController extends Controller
             }
 
             return redirect()->route('main_categories.index')->with(['success' => 'تم التحديث بنجاح']);
+
         }catch (\Exception $exception){
             return redirect()->route('main_categories.index')->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى المحاولة لاحقا']);
         }
@@ -155,15 +157,24 @@ class MainCategoryController extends Controller
                 return redirect()->route('main_categories.index')->with(['error' => 'لا يمكن حذف هذا القسم بسبب وجود متاجر تابعه له ']);
             }
 
-            foreach ($mainCategory->categories as $category) {
-                $category->delete();
-            }
+//            foreach ($mainCategory->categories as $category) {
+//                $category->delete();
+//            }
+
+            $mainCategory->categories()->delete();
+
+//            if ($mainCategory->image) {
+//                if (File::exists('assets/images/' . $mainCategory->image)) {
+//
+//                    unlink('assets/images/' . $mainCategory->image);
+//                }
+//            }
 
             if ($mainCategory->image) {
-                if (File::exists('assets/images/' . $mainCategory->image)) {
 
-                    unlink('assets/images/' . $mainCategory->image);
-                }
+                $image = Str::after($mainCategory->image, 'assets/');
+                $image = base_path('public/assets/'.$image);
+                unlink($image);
             }
 
             $mainCategory->delete();
@@ -171,7 +182,28 @@ class MainCategoryController extends Controller
             return redirect()->route('main_categories.index')->with(['success' => 'تم حذف القسم بنجاح']);
 
         } catch (\Exception $ex) {
-            return redirect()->back()->with(['error' => 'حدث خطأ أثناء انشاء الارسال يرجى الحذف لاحقا']);
+            return redirect()->back()->with(['error' => 'حدث خطأ يرجى الحذف لاحقا']);
+        }
+    }
+
+    public function change_status($id)
+    {
+        try {
+
+            $category = MainCategory::find($id);
+
+            if (!$category){
+                return redirect()->route('main_categories.index')->with(['error' => 'هذا القسم غير موجود!']);
+            }
+
+            $status = $category->status == 0 ? 1 : 0;
+
+            $category->update(['status' => $status]);
+
+            return redirect()->route('main_categories.index')->with(['success' => 'تم تغير حالة القسم بنجاح']);
+
+        } catch (\Exception $exception) {
+            return redirect()->back()->with(['error' => 'حدث خطأ يرجى الحذف لاحقا']);
         }
     }
 }

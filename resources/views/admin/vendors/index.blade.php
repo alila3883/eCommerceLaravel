@@ -62,7 +62,7 @@
                                                     <tr>
                                                         <td>{{$vendor->name}}</td>
                                                         <td><img style="width: 150px; height: 100px;"
-                                                                 src="{{ asset('assets/images/'. $vendor->logo) }}">
+                                                                 src="{{ $vendor->logo }}">
                                                         </td>
                                                         <td>{{$vendor-> mobile}}</td>
                                                         <td> {{$vendor->category->name}}</td>
@@ -85,8 +85,13 @@
 
 
                                                                 <a href=""
-                                                                   class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">تفعيل</a>
-
+                                                                   class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                @if($vendor->status == 0)
+                                                                    تفعيل
+                                                                @else
+                                                                    الغاء تفعيل
+                                                                @endif
+                                                                </a>
 
                                                             </div>
                                                         </td>

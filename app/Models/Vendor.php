@@ -26,10 +26,10 @@ class Vendor extends Model
         }
     }
 
-//        public function getLogoAttribute($val)
-//    {
-//        return $val !== null ? asset('assets/images/' . $val) : "";
-//    }
+        public function getLogoAttribute($val)
+    {
+        return $val !== null ? asset('assets/images/' . $val) : "";
+    }
 
     public function scopeSelection($query)
     {

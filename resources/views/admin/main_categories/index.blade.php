@@ -61,14 +61,14 @@
                                                         <td>{{ $category->name }}</td>
                                                         <td>{{ get_default_lang() }}</td>
                                                         <td>{{ $category->getStatus() }}</td>
-                                                        <td> <img style="width: 150px; height: 100px;" src="{{ asset('assets/images/'. $category->image) }}"></td>
+                                                        <td> <img style="width: 150px; height: 100px;" src="{{ $category->image }}"></td>
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
                                                                 <a href="{{ route('main_categories.edit', $category->id) }}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
 
-                                                                <a href="javascript:void(0);" onclick="if (confirm('Are You sure want to Delete?'))
+                                                                <a href="javascript:void(0);" onclick="if (confirm('هل تريد حذف القسم بالكامل?'))
                                                                     { document.getElementById('category-delete-{{ $category->id }}').submit(); } else { return false; }"
                                                                    title="Delete" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
                                                                 <form action="{{ route('main_categories.destroy', $category->id) }}" method="post" id="category-delete-{{ $category->id }}">
@@ -78,7 +78,7 @@
 
 
 
-                                                                <a href="#"
+                                                                <a href="{{ route('main_categories.status', $category->id) }}"
                                                                    class="btn btn-outline-warning btn-min-width box-shadow-3 mr-1 mb-1">
                                                                     @if($category->status == 0)
                                                                         تفعيل
