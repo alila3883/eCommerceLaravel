@@ -43,16 +43,16 @@ class VendorCreated extends Notification
      */
     public function toMail($notifiable)
     {
-        $subject = sprintf('%s: تم انشاء حسابك في موقع ستور كوم  %s!', config('app.name'), 'Ali');
+        $subject = sprintf('%s: تم انشاء حسابك في موقع ستور كوم  %s!', config('app.name'), $notifiable->name);
         $greeting = sprintf('مرحبا %s!', $notifiable->name);
 
         return (new MailMessage)
                     ->subject($subject)
                     ->greeting($greeting)
-                    ->salutation('Yours Faithfully')
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->salutation('ملخص الرسالة')
+                    ->line('تم انشاء متجرك في موقع ستور كوم بنجاح يرجى الذهاب التوجه الى الموقع  لتاكيد التفعيل.')
+                    ->action('الذهاب الى الموقع', url('/'))
+                    ->line('شكرا على زيارتك موقع ستور كوم!');
     }
 
     /**

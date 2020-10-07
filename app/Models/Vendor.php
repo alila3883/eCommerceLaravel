@@ -4,28 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Vendor extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected $guarded = [];
 
-    protected $hidden = ['category_id'];
+    protected $hidden = ['password', 'category_id'];
 
-    public function scopeStatus($query)
+    public function scopeActive($query)
     {
         return $query->where('status', 1);
     }
 
-        public function getLogoAttribute($val)
+    public function setPasswordAttribute($password)
     {
-        return $val !== null ? asset('assets/images/' . $val) : "";
+        if (!empty($password)) {
+            $this->attributes['password'] = bcrypt($password);
+        }
     }
+
+//        public function getLogoAttribute($val)
+//    {
+//        return $val !== null ? asset('assets/images/' . $val) : "";
+//    }
 
     public function scopeSelection($query)
     {
-        return $query->select('id', 'category_id', 'name', 'logo', 'mobile', 'status');
+        return $query->select('id', 'category_id', 'name', 'logo', 'mobile', 'status', 'password', 'address', 'email');
     }
 
     public function category()

@@ -62,8 +62,8 @@
                                                     <tr>
                                                         <td>{{$vendor->name}}</td>
                                                         <td><img style="width: 150px; height: 100px;"
-                                                                 src="{{$vendor->logo}}"></td>
-
+                                                                 src="{{ asset('assets/images/'. $vendor->logo) }}">
+                                                        </td>
                                                         <td>{{$vendor-> mobile}}</td>
                                                         <td> {{$vendor->category->name}}</td>
 

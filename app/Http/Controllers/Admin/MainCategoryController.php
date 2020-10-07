@@ -142,10 +142,17 @@ class MainCategoryController extends Controller
     {
 
         try {
+
             $mainCategory = MainCategory::find($id);
 
             if (!$mainCategory) {
-                return redirect()->route('main_categories.index')->with(['error' => 'هذه اللغة غير موجودة']);
+                return redirect()->route('main_categories.index')->with(['error' => 'هذا القسم غير موجود']);
+            }
+
+            $vendors = $mainCategory->vendors();
+
+            if (isset($vendors) && $vendors->count() > 0) {
+                return redirect()->route('main_categories.index')->with(['error' => 'لا يمكن حذف هذا القسم بسبب وجود تجار تابعين له ']);
             }
 
             foreach ($mainCategory->categories as $category) {

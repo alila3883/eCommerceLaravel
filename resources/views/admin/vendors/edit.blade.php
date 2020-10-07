@@ -11,7 +11,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.vendors')}}">المتاجر </a>
+                                <li class="breadcrumb-item"><a href="{{route('vendors.index')}}">المتاجر </a>
                                 </li>
                                 <li class="breadcrumb-item active">تعديل متجر
                                 </li>
@@ -43,27 +43,27 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.vendors.update',$vendor -> id)}}"
+                                        <form class="form" action="{{route('vendors.update', $vendor->id)}}"
                                               method="POST"
                                               enctype="multipart/form-data">
                                             @csrf
+                                            @method('PUT')
+                                             <input type="hidden" name="id" value="{{$vendor->id}}">
 
-                                             <input type="hidden" name="id" value="{{$vendor -> id}}">
-
-                                            <input type="hidden"  value="{{$vendor -> latitude}}" id="latitude" name="latitude">
-                                            <input type="hidden" value="{{$vendor -> longitude}}" id="longitude"  name="longitude">
+                                            <input type="hidden"  value="{{$vendor->latitude}}" id="latitude" name="latitude">
+                                            <input type="hidden" value="{{$vendor->longitude}}" id="longitude"  name="longitude">
 
                                             <div class="form-group">
                                                 <div class="text-center">
                                                     <img
-                                                        src="{{$vendor  -> logo}}"
-                                                        class="rounded-circle  height-250" alt="صورة القسم  ">
+                                                        src="{{ asset('assets/images/'. $vendor->logo) }}"
+                                                        class="rounded-circle  height-100" alt="صورة القسم  ">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <label> لوجو التجار </label>
+                                                <label> شعار التاجر</label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="logo">
                                                     <span class="file-custom"></span>
@@ -82,7 +82,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> الاسم </label>
-                                                            <input type="text" value="{{$vendor -> name}}" id="name"
+                                                            <input type="text" value="{{$vendor->name}}" id="name"
                                                                    class="form-control"
                                                                    placeholder="  "
                                                                    name="name">
@@ -100,9 +100,9 @@
                                                                     @if($categories && $categories -> count() > 0)
                                                                         @foreach($categories as $category)
                                                                             <option
-                                                                                value="{{$category -> id }}"
-                                                                                @if($vendor -> category_id == $category -> id  )  selected @endif
-                                                                            >{{$category -> name}}</option>
+                                                                                value="{{$category->id }}"
+                                                                                @if($vendor->category_id == $category->id  )  selected @endif
+                                                                            >{{$category->name}}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </optgroup>
@@ -122,7 +122,7 @@
                                                             <input type="text" id="mobile"
                                                                    class="form-control"
                                                                    placeholder="  " name="mobile"
-                                                              value="{{$vendor -> mobile}}">
+                                                              value="{{$vendor->mobile}}">
 
                                                             @error("mobile")
                                                             <span class="text-danger"> {{$message}}</span>
@@ -135,7 +135,7 @@
                                                             <input type="text" id="email"
                                                                    class="form-control"
                                                                    placeholder="  " name="email"
-                                                                   value="{{$vendor -> email}}">
+                                                                   value="{{$vendor->email}}">
 
                                                             @error("email")
                                                             <span class="text-danger"> {{$message}}</span>
@@ -171,7 +171,7 @@
                                                             <input type="text" id="pac-input"
                                                                    class="form-control"
                                                                    placeholder="  " name="address"
-                                                                   value="{{$vendor -> address}}"
+                                                                   value="{{$vendor->address}}"
                                                             >
 
                                                             @error("address")
@@ -185,14 +185,14 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
                                                             <input type="checkbox" value="1"
-                                                                   name="active"
+                                                                   name="status"
                                                                    id="switcheryColor4"
                                                                    class="switchery" data-color="success"
-                                                                   @if($vendor -> active == 1)checked @endif/>
+                                                                   @if($vendor->status == 1)checked @endif/>
                                                             <label for="switcheryColor4"
                                                                    class="card-title ml-1">الحالة </label>
 
-                                                            @error("active")
+                                                            @error("status")
                                                             <span class="text-danger"> </span>
                                                             @enderror
                                                         </div>
@@ -425,6 +425,6 @@
         }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZAuxH9xTzD2DLY2nKSPKrgRi2_y0ejs&libraries=places&callback=initAutocomplete&language=ar&region=EG
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZAuxH9xTzD2DLY2nKSPKrgRi2_y0ejs&libraries=places&callback=initAutocomplete&language=ar&region=SA
          async defer"></script>
 @stop

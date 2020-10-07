@@ -32,7 +32,8 @@ function uploadImageByName($folder, $name, $image, $id)
     $file = Str::slug($name).'.'.$image->getClientOriginalExtension();
     $fileName = pathinfo($file,PATHINFO_FILENAME);//get the file name
     $fileEXT = pathinfo($file,PATHINFO_EXTENSION);//get the file extension
-    $fullFile = $fileName.$id.'.'.$fileEXT; //to make file unique
+    $fullFile = $fileName.'-id-'.$id.'.'.$fileEXT; //to make file unique
     $path = $image->storeAs($folder, $fullFile, $folder); // then store the file in public
     return $path;
 }
+

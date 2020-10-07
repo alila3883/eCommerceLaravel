@@ -17,9 +17,10 @@ class CreateVendorsTable extends Migration
             $table->id();
             $table->string('name', 150);
             $table->string('logo', 200);
-            $table->string('mobile', 100);
+            $table->string('mobile', 100)->unique();
             $table->text('address');
-            $table->string('email', 100)->nullable();
+            $table->string('email', 100)->unique();
+            $table->string('password');
             $table->unsignedTinyInteger('status')->default(0);
             $table->integer('category_id');
             $table->timestamps();

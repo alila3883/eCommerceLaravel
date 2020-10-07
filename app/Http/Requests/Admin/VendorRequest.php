@@ -26,11 +26,11 @@ class VendorRequest extends FormRequest
         return [
             'logo'        => 'required_without:id|mimes:jpg,jpeg,png',
             'name'        => 'required|string|max:100',
-            'mobile'      => 'required|max:100',
-            'email'       => 'sometimes|nullable|email',
+            'mobile'      => 'required|max:100|unique:vendors,mobile,'.$this->id,
+            'email'       => 'required|email|unique:vendors,email,'.$this->id,
             'category_id' => 'required|exists:main_categories,id',
             'address'     => 'required|string|max:500',
-//            'password'    => 'required',
+            'password'    => 'required_without:id',
         ];
     }
 
@@ -44,15 +44,19 @@ class VendorRequest extends FormRequest
             'name.max'                => 'يجب الا يزيد الاسم عن 100 حرف',
             'mobile.max'              => 'يجب الا يزيد رقم الهاتف عن 100 حرف',
             'mobile.required'         => 'رقم الهاتف مطلوب .',
+            'mobile.unique'           => 'رقم الهاتف مستخدم من قبل',
             'email.required'          => 'البريد الإلكتروني مطلوب ',
             'email.email'             => 'صيغة البريد الالكتروني غير صحيحية',
             'email.string'            => 'يجب ان يكون الايميل عباراة عن حروف وارقام ورموز فقط',
+            'email.unique'            => 'البريد الالكتروني مستخدم من قبل',
             'category_id.required'    => 'القسم مطلوب .',
             'category_id.exists'      => 'القسم غير موجود.',
             'address.required'        => 'العنوان مطوب',
             'address.max'             => 'يجب الا يزيد العنوان عن 500 حرف',
             'address.string'          => 'العنوان لابد ان يكون حروف وارقام',
-            'password.required'       => 'يجب ادخال كلمة المرور'
+            'password.required'       => 'يجب ادخال كلمة المرور',
+            'password.min'            => 'كلمة المرور يجب الا تقل عن 6',
+            'password.string'         => 'كلمة المرور لابد ان تكون حروف وارقام',
         ];
     }
 }
